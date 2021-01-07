@@ -6,7 +6,7 @@ import sys
 
 app = Flask(__name__)
 
-app.config["MONGO_URI"] = "mongodb://localhost:27017/Mission_to_Mars_DB"
+app.config["MONGO_URI"] = "mongodb://localhost:26543/MissionToMars"
 mongo = PyMongo(app)
 
 
