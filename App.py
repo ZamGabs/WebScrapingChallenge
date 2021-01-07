@@ -6,7 +6,6 @@ import sys
 
 app = Flask(__name__)
 
-#SETUP MONGO CONNECTION
 app.config["MONGO_URI"] = "mongodb://localhost:27017/Mission_to_Mars_DB"
 mongo = PyMongo(app)
 
@@ -14,9 +13,9 @@ mongo = PyMongo(app)
 @app.route("/")
 def index():
     print("I am on index.html")
-    # write a statement that finds all the items in the db and sets it to a variable
+  
     mars_data=mongo.db.mars_db.find_one()
-    # render an index.html template and pass it the data you retrieved from the database
+ 
     return render_template("index.html", data=mars_data)
 
 @app.route("/scrape")
